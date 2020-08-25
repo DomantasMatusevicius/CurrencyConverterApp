@@ -1,11 +1,24 @@
 package com.example.CurrencyConverterApp.data;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "useractivity")
 public class ConversionCurrency {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "userId")
+    private Integer userId;
+    @Column(name = "toCurrency")
     private String to;
+    @Column(name = "fromCurrency")
     private String from;
-
+    @Column(name = "value")
     private double value;
+    @Column(name = "result")
+    private double result;
 
     public ConversionCurrency() {
     }
@@ -38,6 +51,22 @@ public class ConversionCurrency {
 
     public void setValue(double value) {
         this.value = value;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public double getResult() {
+        return result;
+    }
+
+    public void setResult(double result) {
+        this.result = result;
     }
 
     @Override

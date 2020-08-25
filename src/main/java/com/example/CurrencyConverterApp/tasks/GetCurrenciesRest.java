@@ -24,7 +24,6 @@ public class GetCurrenciesRest {
 
         RestTemplate restTemplate = new RestTemplate();
         FxRates forObject = restTemplate.getForObject(urlLbApi, FxRates.class);
-        System.out.println(forObject.getFxRates());
         CcyAmt currencyEur = new CcyAmt();
         currencyEur.setCcy(forObject.getFxRates().get(0).getCcyAmts().get(0).getCcy());
         currencyEur.setAmt(forObject.getFxRates().get(0).getCcyAmts().get(0).getAmt());
