@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 
 @Entity
 @Table(name = "currency")
@@ -15,8 +16,10 @@ public class CcyAmt {
 
     @Id
     @Column(name = "name")
+    @XmlElement(name = "Ccy", namespace = "http://www.lb.lt/WebServices/FxRates")
     private String Ccy;
     @Column(name = "valueineuros")
+    @XmlElement(name = "Amt", namespace = "http://www.lb.lt/WebServices/FxRates")
     private double Amt;
 
     public CcyAmt() {

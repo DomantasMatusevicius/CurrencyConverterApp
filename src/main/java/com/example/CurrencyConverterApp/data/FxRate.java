@@ -8,9 +8,11 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class FxRate {
 
+    @XmlElement(name = "Tp", namespace = "http://www.lb.lt/WebServices/FxRates")
     private String Tp;
+    @XmlElement(name = "Dt", namespace = "http://www.lb.lt/WebServices/FxRates")
     private String Dt;
-    @XmlElement(name = "CcyAmt")
+    @XmlElement(name = "CcyAmt", namespace = "http://www.lb.lt/WebServices/FxRates")
     private List<CcyAmt> CcyAmts;
 
     public FxRate() {

@@ -6,14 +6,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-//@XmlRootElement(namespace = "http://www.lb.lt/WebServices/FxRates", name = "FxRates") <-- Anotacija naudota bandant
-// valiutų kursus gauti su RestTemplate.
 
-@XmlRootElement(name = "FxRates")
+@XmlRootElement(namespace = "http://www.lb.lt/WebServices/FxRates", name = "FxRates")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class FxRates {
 
-    @XmlElement(name = "FxRate")
+    @XmlElement(name = "FxRate", namespace = "http://www.lb.lt/WebServices/FxRates")
     List<FxRate> fxRates;
 
     public FxRates() {
